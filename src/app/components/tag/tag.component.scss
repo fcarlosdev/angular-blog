@@ -1,0 +1,18 @@
+:host {
+  // padding: 0.8em 1em;
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  a {
+    color: #344;
+    text-decoration: none;
+  }
+
+  .space {
+   padding: 0.8em 1em;
+  }
+}

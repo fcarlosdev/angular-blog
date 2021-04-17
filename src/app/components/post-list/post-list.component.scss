@@ -1,0 +1,10 @@
+:host {
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    border-radius: 4px;
+
+    .post-list {
+        width: 100%;
+    }
+}
