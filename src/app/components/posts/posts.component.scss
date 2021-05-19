@@ -1,0 +1,86 @@
+:host {
+  // width: 80%;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 20% 80%;
+
+  .about-sb {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-height: 320px;
+    background-color: white;
+    line-height: 25px;
+    border-radius: 6px;
+    color: #4d5760;
+    position: sticky;
+    top: 80px;
+
+    &__nutshell {
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      span {
+        color: blue;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      margin-bottom: 1rem;
+    }
+
+    &__footer {
+      width: 100%;
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: inherit;
+        border: none;
+        padding: 10px;
+        background-color: #3b49df;
+        color: white;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #323ebe;
+        }
+      }
+
+      a {
+        width: 100%;
+        color: blue;
+        text-align: center;
+        padding: 10px;
+        border-radius: 6px;
+
+        &:hover {
+          background-color: #f2f4f4;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  :host {
+    .about-sb {
+      max-height: 25%;
+    }
+  }
+}
+
+@media screen and (max-width: 1005px) {
+  :host {
+    grid-template-columns: 100%;
+
+    .about-sb {
+      display: none;
+    }
+  }
+}

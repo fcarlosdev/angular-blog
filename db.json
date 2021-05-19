@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Simple Blog with Angular",
+      "body": "How to create an angular app",
+      "timeRead": "4 min",
+      "tags": ["#Angular", "#JavaScript"],
+      "authorId": 1,
+      "createdAt": "2021-05-12",
+      "updatedAt": "2021-05-12"
+    },
+    {
+      "id": 2,
+      "title": "Learning Docker",
+      "body": "Learning how Docker work and how to get the most of it",
+      "timeRead": "4 min",
+      "tags": ["#Docker", "#Devops"],
+      "authorId": 2,
+      "createdAt": "2021-05-10",
+      "updatedAt": "2021-05-10"
+    },
+    {
+      "id": 3,
+      "title": "Learning Vue Js",
+      "body": "Learning Vue through the creation of a simple app",
+      "timeRead": "4 min",
+      "tags": ["#Vue Js", "#JavaScript"],
+      "authorId": 2,
+      "createdAt": "2021-05-12",
+      "updatedAt": "2021-05-12"
+    },
+    {
+      "title": "How to Handle Multiple Checkboxes Value in React",
+      "body": "<p><strong style=\"color: rgb(18, 18, 18);\">React</strong><span style=\"color: rgb(18, 18, 18);\"> dynamic checkbox component tutorial; This handy guide explains how to create reusable multiple checkbox component in react, similarly how to get multiple checkboxes values in React and how to store checkbox values into the database on form submit in react application. Ideally, the checkbox …</span></p>",
+      "timeRead": "4 min",
+      "tags": ["#React Js", "#JavaScript"],
+      "authorId": 1,
+      "updatedAt": "1620919571577",
+      "id": 6
+    },
+    {
+      "title": "Display HTML in Angular Components",
+      "body": "<p>Displaying HTML in an Angular component that’s stored in a template variable isn’t as straightforward as you’d expect. In order to properly store and display an HTML string in a component without issues, you’ll need to take one of two approaches depending on the tags and attributes in the HTML. If you’ve tried displaying HTML in your component with the standard template binding syntax (<code style=\"color: rgb(0, 0, 0);\">{{ var }}</code>) you’ll end up with escaped HTML output. There’s a way around this and many of the other common headaches associated with Angular and storing HTML in a variable. Below are two explanations along with helpful examples of each approach that should hopefully make the process simple and easy for you.</p><h2>Simple Scenarios with Basic HTML</h2><p>In most cases you can get by with using the&nbsp;<code style=\"color: rgb(0, 0, 0);\">[innerHTML]</code>&nbsp;attribute, but only if your content is considered&nbsp;<em>safe</em>&nbsp;from XSS. In this context, safe means it doesn’t contain any tags or attributes that can be used to inject JavaScript. Let’s look at a basic working example.</p><p><br></p><h3>COMPONENT TYPESCRIPT</h3><pre class=\"ql-syntax\" spellcheck=\"false\">/**\n * Basic HTML Component Usage\n */\nimport { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'some-component',\n  templateUrl: 'some-component.html',\n})\nexport class SomeComponent implements OnInit {\n  html: string;\n\n  constructor() {}\n\n  ngOnInit(): void {\n    this.html = `&lt;h2&gt;We're currently undergoing essential maintenance, we'll be back online shortly.&lt;/h2&gt;\n    &lt;p&gt;If you have any questions please contact our customer services team via email at &lt;a href=\"mailto:support@domain.com?subject=Support Requested\"&gt;support@domain.com&lt;/a&gt;&lt;/p&gt;`;\n  }\n}\n</pre><p><br></p>",
+      "timeRead": "4 min",
+      "tags": ["#Angular", "#JavaScript"],
+      "authorId": 1,
+      "updatedAt": "1620920421398",
+      "id": 7
+    },
+    {
+      "title": "Colonial Pipeline Paid Hackers $5 Million In Crypto Ransom Hours After Attack",
+      "body": "<p><strong><em>Update (1028ET)</em></strong>: In a stunning reversal to the official narrative in which the good guys lost and those evil \"Russian\" hackers ended up with nothing, Bloomberg reports that Colonial paid the DarkSide hackers approximately $5 million in cryptocurrency (which Bloomberg now calls \"untraceable\" when in its every other hit piece crypto is supposedly completely \"traceable\") within hours of the attack last Friday, contradicting a WaPo report it had no plans to pay the ransom to unlock its paralyzed pipeline system.</p><p>Or what a difference one day makes: here is&nbsp;<a href=\"https://www.washingtonpost.com/business/2021/05/12/gas-shortage-colonial-pipeline-live-updates/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(20, 112, 178);\">WaPo reporting</a>, citing its usual unnamed disinformation sources \"familiar with the matter\":</p><p><br></p><p class=\"ql-align-center\"><img src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/wapo%20sources.jpg?itok=2DillFI_\"></p><p class=\"ql-align-center\"><br></p><p><span style=\"color: rgb(34, 34, 34);\">And after...</span></p><p><br></p><p class=\"ql-align-center\"><img src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/no%20plans%20to%20pay%20ransom.jpg?itok=SoV26Mkl\"></p><p><br></p><p>Once the ransom was paid, the hackers provided Colonial with a decrypting tool to restore its computer system, but \"the tool was so slow that the company continued using its own backups to help restore the system, one of the people familiar with the company’s efforts said.\"</p><p>Yeah right. Alas, now that everyone is lying - that WaPo's sources were dead wrong is hardly a surprise - we will need to get the full story from the hackers themselves. Like, for example, what cryptocurrency was used to make the $5MM payment (we assume bitcoin, adding insult to injury for the ESG cult which faces the double whammy of all those millions of gallons of gasoline flowing again and the realization that Chinese power plants used to mine bitcoin raised global temperatures by at least 1 degree to bring us this payment).</p><p>Of course, the FBI has requested companies and local and state governments not to pay ransom upon an attack because there is no guarantee the hackers will unlock files. Furthermore it will only incentivize more hacks, so we can only imagine what nuclear power plant(s) will be held for ransom next.</p><p>Finally, as expected, official sources were completely useless with VOA's Steve Herman&nbsp;<a href=\"https://twitter.com/W7VOA/status/1392851749099249664\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(20, 112, 178);\">quoting&nbsp;</a>Brandon Wales, the acting director of CISA, as saying, he \"<em>cannot confirm or deny whether Colonial paid the ransom.\"&nbsp;</em></p><p>* * *&nbsp;</p><p><strong>Earlier:&nbsp;&nbsp;</strong>After six days of a fuel shortage crisis that has&nbsp;<a href=\"https://www.zerohedge.com/commodities/nearly-1800-gas-stations-across-southeast-run-out-fuel-amid-panic-hoarding\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(20, 112, 178);\">rocked</a>&nbsp;much of the Southeast US, Colonial Pipeline&nbsp;<a href=\"https://cpcyberresponse.com/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(20, 112, 178);\">announced</a>&nbsp;at 0900 ET that it \"has made substantial progress in safely restarting our pipeline system and can report that product delivery has commenced in a majority of the markets we service.\"&nbsp;</p><p>Colonial said by mid-day, each market it services should be \"receiving the product from our system.\" The pipeline carries about 100 million gallons per day of gasoline, diesel, and jet fuel.&nbsp;</p><p>The green segments on the map below are operational, meaning gasoline, diesel, and jet fuel are flowing through the system. The blue lines represent those segments that will be operational later today.&nbsp;</p><p><br></p><p class=\"ql-align-center\"><img src=\"https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/2021-05-13_09-11-10.png?itok=s9a860y2\"></p><p class=\"ql-align-justify\"><span style=\"color: rgb(34, 34, 34);\">With product flowing through the system, that doesn't necessarily mean fuel shortages will instantly diminish. There's still a shortage of&nbsp;</span><a href=\"https://www.zerohedge.com/commodities/tanker-truck-driver-shortage-may-fuel-higher-gas-prices-summer\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(20, 112, 178);\">qualified</a><span style=\"color: rgb(34, 34, 34);\">&nbsp;tanker drivers to haul fuels to gas stations.</span></p>",
+      "timeRead": "4 min",
+      "tags": ["#News", "#Money"],
+      "authorId": 1,
+      "updatedAt": "1620921525370",
+      "id": 8
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe"
+    }
+  ]
+}

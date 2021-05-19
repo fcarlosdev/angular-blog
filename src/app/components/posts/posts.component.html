@@ -1,0 +1,17 @@
+<div class="about-sb">
+  <div class="about-sb__nutshell">
+    <span>Simple Blog</span>
+    is a communit to discuss various subjects related to technology.
+  </div>
+  <p>
+    We're a place where coders share, stay up-to-date and grow their careers.
+  </p>
+  <div class="about-sb__footer">
+    <button>Create new account</button>
+    <a href="#">Log in</a>
+  </div>
+</div>
+
+<div class="posts">
+  <app-post *ngFor="let post of posts" [post]="post"></app-post>
+</div>

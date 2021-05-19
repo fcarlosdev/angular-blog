@@ -1,0 +1,10 @@
+.tag-item {
+  a {
+    font-size: 0.9em;
+    color: #64707d;
+    margin-right: 0.6rem;
+    &:hover {
+      color: #333;
+    }
+  }
+}

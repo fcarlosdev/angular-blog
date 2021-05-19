@@ -1,0 +1,70 @@
+:host {
+  width: 80%;
+  margin-top: 10px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 6px;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .form-fields{
+        display: flex;
+        flex-direction: column;
+        padding: .4rem 0;
+
+        label {
+            font-weight: bold;
+            margin-bottom: .4rem;
+        }
+
+        .form-field {
+            padding: .5rem;
+        }
+
+        input[type="text"] {
+            height: 50px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 300px;
+            resize: none;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    }
+
+    .form-footer {
+        height: 60px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        button {
+            flex: 1;
+            max-width: 100px;
+            border: none;
+            border-radius: 3px;
+            padding: 1rem .5rem;
+            outline: none;
+            cursor: pointer;
+
+            &:first-child {
+                margin-right: 10px;
+                color: white;
+                background-color: blue;
+            }
+        }
+    }
+
+
+  }
+}

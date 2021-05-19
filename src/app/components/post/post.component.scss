@@ -1,0 +1,96 @@
+:host {
+  width: 100%;
+
+  .post-item {
+    min-height: 100px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+
+    &__header {
+      border: none;
+      padding: 1rem 1.5rem;
+
+      a {
+        color: #333;
+        text-decoration: none;
+
+        &:hover {
+          color: blue;
+        }
+      }
+
+      .post-info {
+        padding: 0.2rem 0;
+
+        span {
+          color: #909497;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__body {
+      font-size: 1.1rem;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      .post-tags {
+        padding: 0.8rem 0;
+        display: flex;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      padding: 0.5rem 1rem 0.8rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .post-actions {
+        flex: 1 1 200px;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+
+        .action-item {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          padding: 0.6rem;
+          border-radius: 6px;
+
+          &:hover {
+            background-color: #f2f3f4;
+          }
+
+          img {
+            margin-right: 0.5rem;
+          }
+
+          a {
+            margin-right: 0.8rem;
+            color: #333;
+
+            .com-times {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .footer_right {
+        flex: 1 1 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        .time-reading {
+          padding: 0.6rem;
+        }
+      }
+    }
+  }
+}
