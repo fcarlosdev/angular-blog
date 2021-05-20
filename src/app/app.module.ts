@@ -11,6 +11,8 @@ import { CrudFormComponent } from './components/crud-form/crud-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 import { TagComponent } from './components/tag/tag.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TaglistComponent } from './components/taglist/taglist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TagComponent } from './components/tag/tag.component';
     PostComponent,
     AuthorComponent,
     CrudFormComponent,
-    TagComponent
+    TagComponent,
+    NavbarComponent,
+    TaglistComponent
   ],
   imports: [
     BrowserModule,

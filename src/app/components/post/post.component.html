@@ -13,14 +13,14 @@
   <div class="post-item__body">
     <div class="body_content" [innerHTML]="postDescription()"></div>
     <div class="post-tags">
-      <app-tag *ngFor="let tag of post.tags" [tag]="tag"></app-tag>
+      <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
     </div>
   </div>
   <div class="post-item__footer">
     <div class="post-actions">
       <div class="action-item">
         <img src="../../../assets/images/favorite.png" alt="" />
-        <a href="#"><span class="react-times">0</span> Reactions</a>
+        <a routerLink="" (click)="onReaction()"><span class="react-times">{{countReactions()}}</span> Reactions</a>
       </div>
       <div class="action-item">
         <img src="../../../assets/images/chat_bubble.png" alt="" />

@@ -1,0 +1,33 @@
+:host {
+  flex: 0 1 225px;
+  background-color: white;
+  position: sticky;
+  top: 433px;
+  border-radius: 6px;
+  overflow-x: auto;
+
+  .header {
+
+    h3 {
+      padding-top: .8rem;
+      padding-bottom: 0;
+    }
+
+    padding: .2rem 1rem;
+  }
+
+  .tags-items {
+    height: 100%;
+    padding: 0 1rem;
+    .tg-item {
+      padding: .1px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :host {
+      top: 438px;
+  }
+}

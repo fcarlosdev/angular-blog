@@ -5,6 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 import { Post } from './../../models/post';
 import { Author } from 'src/models/author';
+import { Tag } from 'src/models/tag';
 
 
 @Injectable({
@@ -38,6 +39,21 @@ export class BlogService {
       );
   }
 
+  getAllTags(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${this.BASE_URL}/tags`);
+  }
+
+  getTag(id): Observable<Tag> {
+    return this.http.get<Tag>(`${this.BASE_URL}/tags/${id}`);
+  }
+
+  addLike(post:Post): Observable<Post> {
+    return this.http.patch<Post>(`${this.BASE_URL}/posts/${post.id}`, JSON.stringify(post), this.httpHeader)
+      .pipe(
+        retry(1),
+        catchError(this.httpError)
+      );
+  }
 
   private httpError(error) {
     let msg = '';
