@@ -1,6 +1,6 @@
 import { User } from './../../../models/user';
 import { BlogService } from './../../services/blog.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -22,13 +22,26 @@ export class UserFormComponent implements OnInit {
     private service: BlogService) { }
 
   ngOnInit(): void {
-    this.userForm = this.fb.group({
-      "name": "",
-      "email": "",
-      "password": "",
-      "confPassword": ""
-    })
+    this.createUserForm();
   }
+
+  getField(label): AbstractControl {
+    return this.userForm.get(label);
+  }
+
+  fieldInvalid(field: string): boolean {
+    const fName = this.getField(field);
+    return (fName.dirty || fName.touched) && fName.invalid;
+  }
+
+  requiredField(field: string): boolean {
+    return this.fieldInvalid(field) && this.getField(field).errors.required;
+  }
+
+  emailInvalid(mailField: string): boolean {
+    return this.fieldInvalid(mailField) && this.getField(mailField).errors.email;
+  } 
+
 
   onSubmit() {
     const { name, email, password, confPassword } = this.userForm.controls;
@@ -44,8 +57,21 @@ export class UserFormComponent implements OnInit {
     } else {
       alert("Passwords do not equals")
     }
+  }
+
+  onCancel() {
+    this.userForm.reset();
+  }
 
 
+  private createUserForm() {
+
+    this.userForm = this.fb.group({
+      name: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", Validators.required],
+      confPassword: ["", Validators.required]
+    })
   }
 
 }

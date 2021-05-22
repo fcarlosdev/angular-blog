@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
+import { User } from './../../models/user';
 import { Post } from './../../models/post';
-import { Author } from 'src/models/author';
 import { Tag } from 'src/models/tag';
 
 
@@ -21,14 +21,14 @@ export class BlogService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }  
-
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.BASE_URL}/posts?_expand=author&_sort=id&_order=desc`);
   }
 
-  getAuthor(id): Observable<Author> {
-    return this.http.get<Author>(`${this.BASE_URL}/authors/${id}`);
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.BASE_URL}/posts?_expand=user&_sort=id&_order=desc`);
+  }
+
+  getUser(id): Observable<User> {
+    return this.http.get<User>(`${this.BASE_URL}/users/${id}`);
   }
 
   create(newPost: Post): Observable<Post> {
@@ -47,12 +47,20 @@ export class BlogService {
     return this.http.get<Tag>(`${this.BASE_URL}/tags/${id}`);
   }
 
-  addLike(post:Post): Observable<Post> {
+  addLike(post: Post): Observable<Post> {
     return this.http.patch<Post>(`${this.BASE_URL}/posts/${post.id}`, JSON.stringify(post), this.httpHeader)
       .pipe(
         retry(1),
         catchError(this.httpError)
       );
+  }
+
+  public signUp(user: User): Observable<User> {
+    return this.http.post<User>(`${this.BASE_URL}/users`, JSON.stringify(user), this.httpHeader)
+      .pipe(
+        retry(1),
+        catchError(this.httpError)
+      )
   }
 
   private httpError(error) {

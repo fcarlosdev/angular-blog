@@ -1,4 +1,5 @@
-import { Author } from './author';
+import { User } from './user';
+
 export interface Post {
     id?: number;
     title: string;
@@ -7,8 +8,8 @@ export interface Post {
     tags: [];
     comments?:number[];
     likes?:number[];
-    author?: Author;
-    authorId: number;
+    user?: User;
+    userId: number;
     createdAt?: string;
     updatedAt?: string;
 }

@@ -1,17 +1,28 @@
 <div class="form-wrapper">
   <div class="form-wrapper__header">
-    <h2>Register User</h2>
+    <h2>Sign Up</h2>
   </div>
   <form [formGroup]="userForm" class="form-wrapper__group" (ngSubmit)="onSubmit()">
     <div class="group-field">
       <input type="text" placeholder="User name" formControlName="name" />
+      <small *ngIf="requiredField('name')" class="msg-error">Name is required</small>
+
       <input type="email" placeholder="Email" formControlName="email" />
+      <small *ngIf="requiredField('email')" class="msg-error">Email is required.</small>
+      <small *ngIf="emailInvalid('email')" class="msg-error">Invalid Email format.</small>
+
       <input type="password" placeholder="Password" formControlName="password" />
+      <small *ngIf="requiredField('password')" class="msg-error">Password is required</small>
+
       <input type="password" placeholder="Confirm the password" formControlName="confPassword" />
+      <small *ngIf="requiredField('confPassword')" class="msg-error">Password is required</small>
     </div>
     <div class="form-footer">
-        <button type="submit" class="bt-first">Register</button>
-        <button class="bt-last">Cancel</button>
+      <button type="submit" 
+        [ngClass]="{'bt-first': userForm.valid, 'bt-disabled': !userForm.valid}" 
+        [disabled]="!userForm.valid"> Sign Up 
+      </button>
+      <button type="button" class="bt-last" (click)="onCancel()">Cancel</button>
     </div>
   </form>
 </div>

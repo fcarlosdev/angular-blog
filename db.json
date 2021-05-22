@@ -11,13 +11,9 @@
       ],
       "comments": [],
       "likes": [],
-      "authorId": 1,
+      "userId": 1,
       "createdAt": "2021-05-12",
-      "updatedAt": "2021-05-12",
-      "author": {
-        "id": 1,
-        "name": "John Doe"
-      }
+      "updatedAt": "2021-05-12"
     },
     {
       "id": 2,
@@ -29,15 +25,10 @@
         4
       ],
       "comments": [],
-      "likes": [
-      ],
-      "authorId": 2,
+      "likes": [],
+      "userId": 2,
       "createdAt": "2021-05-10",
-      "updatedAt": "2021-05-10",
-      "author": {
-        "id": 2,
-        "name": "Jane Doe"
-      }
+      "updatedAt": "2021-05-10"
     },
     {
       "id": 3,
@@ -49,15 +40,10 @@
         5
       ],
       "comments": [],
-      "likes": [
-      ],
-      "authorId": 2,
+      "likes": [],
+      "userId": 2,
       "createdAt": "2021-05-12",
-      "updatedAt": "2021-05-12",
-      "author": {
-        "id": 2,
-        "name": "Jane Doe"
-      }
+      "updatedAt": "2021-05-12"
     },
     {
       "title": "How to Handle Multiple Checkboxes Value in React",
@@ -68,15 +54,10 @@
         6
       ],
       "comments": [],
-      "likes": [
-      ],
-      "authorId": 1,
+      "likes": [],
+      "userId": 1,
       "updatedAt": "1620919571577",
-      "id": 6,
-      "author": {
-        "id": 1,
-        "name": "John Doe"
-      }
+      "id": 6
     },
     {
       "title": "Display HTML in Angular Components",
@@ -88,13 +69,9 @@
       ],
       "comments": [],
       "likes": [],
-      "authorId": 1,
+      "userId": 1,
       "updatedAt": "1620920421398",
-      "id": 7,
-      "author": {
-        "id": 1,
-        "name": "John Doe"
-      }
+      "id": 7
     },
     {
       "title": "Colonial Pipeline Paid Hackers $5 Million In Crypto Ransom Hours After Attack",
@@ -105,17 +82,20 @@
         8
       ],
       "comments": [],
-      "likes": [],
-      "authorId": 1,
+      "likes": [
+        9,
+        2
+      ],
+      "userId": 1,
       "updatedAt": "1620921525370",
       "id": 8,
-      "author": {
+      "user": {
         "id": 1,
         "name": "John Doe"
       }
     }
   ],
-  "authors": [
+  "users": [
     {
       "id": 1,
       "name": "John Doe"
@@ -123,6 +103,12 @@
     {
       "id": 2,
       "name": "Jane Doe"
+    },
+    {
+      "name": "Fulano",
+      "email": "fulano@mail.com",
+      "password": "123456",
+      "id": 3
     }
   ],
   "tags": [
