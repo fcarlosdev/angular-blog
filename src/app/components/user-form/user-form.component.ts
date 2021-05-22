@@ -1,3 +1,4 @@
+import { NotificationService } from './../../services/notification.service';
 import { User } from './../../../models/user';
 import { BlogService } from './../../services/blog.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  styleUrls: ['./user-form.component.scss'],
+  providers: [ NotificationService]
 })
 export class UserFormComponent implements OnInit {
 
@@ -19,13 +21,14 @@ export class UserFormComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder,
-    private service: BlogService) { }
+              private service: BlogService,
+              private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     this.createUserForm();
   }
 
-  getField(label): AbstractControl {
+  getField(label:string): AbstractControl {
     return this.userForm.get(label);
   }
 
@@ -50,8 +53,8 @@ export class UserFormComponent implements OnInit {
       this.user.email = email.value;
       this.user.password = password.value;
 
-      this.service.signUp(this.user).subscribe(response => {
-        alert("User registered " + response)
+      this.service.signUp(this.user).subscribe(() => {
+        this.notifyService.showSuccess("User registered!!", "Sign Up")
       })
 
     } else {
@@ -63,9 +66,7 @@ export class UserFormComponent implements OnInit {
     this.userForm.reset();
   }
 
-
   private createUserForm() {
-
     this.userForm = this.fb.group({
       name: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],

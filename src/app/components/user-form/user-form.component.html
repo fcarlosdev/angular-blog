@@ -15,12 +15,13 @@
       <small *ngIf="requiredField('password')" class="msg-error">Password is required</small>
 
       <input type="password" placeholder="Confirm the password" formControlName="confPassword" />
-      <small *ngIf="requiredField('confPassword')" class="msg-error">Password is required</small>
+      <small *ngIf="requiredField('confPassword')" class="msg-error" >Password is required</small>
     </div>
     <div class="form-footer">
       <button type="submit" 
-        [ngClass]="{'bt-first': userForm.valid, 'bt-disabled': !userForm.valid}" 
-        [disabled]="!userForm.valid"> Sign Up 
+        [ngClass]="{'bt-first': userForm.valid,'bt-disabled': !userForm.valid}"
+        [disabled]="!userForm.valid">
+        Sign Up
       </button>
       <button type="button" class="bt-last" (click)="onCancel()">Cancel</button>
     </div>

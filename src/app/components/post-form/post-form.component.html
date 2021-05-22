@@ -2,13 +2,21 @@
   <h2>Post create</h2>
   <div class="form-fields">
     <label for="title">Title</label>
-    <input type="text" name="title" class="form-field" formControlName="title"/>
+    <input
+      type="text"
+      name="title"
+      class="form-field"
+      formControlName="title"
+    />
   </div>
   <div class="form-fields">
     <label for="body">Contenty</label>
-    <quill-editor name="body" formControlName="body" 
-        [modules]="editorConfig" 
-        [styles]="{'height': '200px'}">
+    <quill-editor
+      name="body"
+      formControlName="body"
+      [modules]="editorConfig"
+      [styles]="{ height: '200px' }"
+    >
     </quill-editor>
   </div>
   <div class="form-footer">
@@ -16,4 +24,3 @@
     <button type="button" (click)="onCancel()">Cancel</button>
   </div>
 </form>
-
