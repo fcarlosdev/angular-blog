@@ -2,7 +2,7 @@
   display: flex;
   min-width: 400px;
   max-width: 400px;
-  padding: 1.2rem 1.5rem;
+  padding: 2rem 1.5rem;
   flex-direction: column;
   background-color: #2c3e50;
   border-radius: 6px;
@@ -16,6 +16,22 @@
     justify-content: center;
     margin-bottom: 2rem;
     color: white;
+
+    .form-signup,
+    .form-login {
+      flex: 1;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.8rem 0;
+      outline: none;
+      font-weight: bold;
+      background-color: #5d6d7e;
+    }
+
+    .active-form {
+      background-color: #7dcea0;
+    }
   }
 
   &__group {
@@ -26,21 +42,28 @@
     .group-field {
       display: flex;
       flex-direction: column;
-      margin-bottom: 0.5rem;
 
-      input {
-        padding: 0.7rem 1rem;
-        font-size: 1rem;
-        margin-bottom: 2rem;
-        border: 1px solid #ccc;
-        outline: none;
+      .form-field {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        input {
+          padding: 0.7rem 1rem;
+          font-size: 1rem;
+          margin-bottom: 1.8rem;
+          border: 1px solid #ccc;
+          outline: none;
+        }
       }
 
       .msg-error {
-        margin-top: -1.8rem;
+        border: none;
+        padding: 1rem 0.5rem;
+        margin-top: -1.6rem;
         margin-bottom: 1rem;
-        color: red;
-        background-color: white;
+        color: white;
+        background-color: red;
       }
     }
 
@@ -51,28 +74,16 @@
       justify-content: flex-end;
 
       button {
-        flex: 0 1 1;
+        flex: 1;
         padding: 0.8rem;
         border: none;
         font-size: 1.1em;
         outline: none;
         cursor: pointer;
-        border-radius: 4px;
-        min-width: 150px;
-
-        &.bt-first {
-          color: white;
-          background-color: blue;
-          margin-right: 10px;
-        }
-
-        &.bt-last {
-          color: white;
-          background-color: red;
-        }
+        color: white;
+        background-color: #7dcea0;
 
         &.bt-disabled {
-          margin-right: 10px;
           background-color: darkgray;
         }
       }

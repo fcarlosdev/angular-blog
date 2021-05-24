@@ -1,29 +1,47 @@
 <div class="form-wrapper">
   <div class="form-wrapper__header">
-    <h2>Sign Up</h2>
+    <button class="form-login active-form" 
+      [ngClass]="{'active-form': loginFormActive()}" 
+      (click)="selectForm('login')">
+      Log In
+    </button>
+
+    <button class="form-signup" 
+      [ngClass]="{'active-form': signupFormActive()}" 
+      (click)="selectForm('signup')">
+      Sign Up
+    </button>
   </div>
   <form [formGroup]="userForm" class="form-wrapper__group" (ngSubmit)="onSubmit()">
     <div class="group-field">
-      <input type="text" placeholder="User name" formControlName="name" />
-      <small *ngIf="requiredField('name')" class="msg-error">Name is required</small>
+      <div class="form-field" *ngIf="formType == 'signup'">
+        <input type="text" placeholder="User name" formControlName="name" />
+        <small *ngIf="requiredField('name')" class="msg-error">Name is required</small>
+      </div>
 
-      <input type="email" placeholder="Email" formControlName="email" />
-      <small *ngIf="requiredField('email')" class="msg-error">Email is required.</small>
-      <small *ngIf="emailInvalid('email')" class="msg-error">Invalid Email format.</small>
+      <div class="form-field" >
+        <input type="email" placeholder="Email" formControlName="email" />
+        <small *ngIf="requiredField('email')" class="msg-error">Email is required.</small>
+        <small *ngIf="emailInvalid('email')" class="msg-error">Invalid Email format.</small>
+      </div>
 
-      <input type="password" placeholder="Password" formControlName="password" />
-      <small *ngIf="requiredField('password')" class="msg-error">Password is required</small>
+      <div class="form-field" >
+        <input type="password" placeholder="Password" formControlName="password" />
+        <small *ngIf="requiredField('password')" class="msg-error">Password is required</small>
+      </div>
 
-      <input type="password" placeholder="Confirm the password" formControlName="confPassword" />
-      <small *ngIf="requiredField('confPassword')" class="msg-error" >Password is required</small>
+      <div class="form-field" *ngIf="formType == 'signup'">
+        <input type="password" placeholder="Confirm the password" formControlName="confPassword"/>
+        <small *ngIf="requiredField('confPassword')" class="msg-error" >Password is required</small>
+      </div>
+
     </div>
     <div class="form-footer">
       <button type="submit" 
         [ngClass]="{'bt-first': userForm.valid,'bt-disabled': !userForm.valid}"
         [disabled]="!userForm.valid">
-        Sign Up
+        {{btnLabel}}
       </button>
-      <button type="button" class="bt-last" (click)="onCancel()">Cancel</button>
     </div>
   </form>
 </div>

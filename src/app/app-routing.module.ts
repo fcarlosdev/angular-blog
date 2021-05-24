@@ -8,7 +8,8 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 const routes: Routes = [
   { path: "", component: PostsComponent, }, 
   { path: "add", component: PostFormComponent },
-  { path: "signup", component: UserFormComponent}
+  { path: "signup", component: UserFormComponent},
+  { path: "login", component: UserFormComponent}
 ];
 
 @NgModule({
