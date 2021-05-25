@@ -78,7 +78,15 @@ export class UserFormComponent implements OnInit {
         this.notifyService.showErrorMessage("Passwords do not equals", "Sign Up")
       }
     } else {
-      this.notifyService.showInfoMessage(this.userForm.controls,"Log In");
+      const {email, password} = this.userForm.controls;
+      this.service.getUserByEmail(email.value).subscribe(data => {
+        if (data && data[0].password == password.value) {
+          this.service.login(data[0].name)
+          this.router.navigateByUrl("/");
+        } else {
+          this.notifyService.showErrorMessage("Wrong user or password","Log In")
+        }
+      })
     }
   }
 
@@ -109,7 +117,7 @@ export class UserFormComponent implements OnInit {
 
   private createLoginForm() {
     this.userForm = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
+      email: ["", [Validators.required]],
       password: ["", Validators.required],
     })
   }

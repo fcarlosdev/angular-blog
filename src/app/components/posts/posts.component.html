@@ -7,9 +7,12 @@
     <p>
       We're a place where coders share, stay up-to-date and grow their careers.
     </p>
-    <div class="about-sb__footer">
+    <div *ngIf="!isLogged()" class="about-sb__footer">
       <button routerLink="/signup">Create new account</button>
       <a routerLink="/login">Log in</a>
+    </div>
+    <div *ngIf="isLogged()" class="about-sb__footer">
+      <button (click)="logout()" class="logout">Log out</button>
     </div>
   </div>
 

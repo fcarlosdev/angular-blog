@@ -31,6 +31,10 @@ export class BlogService {
     return this.http.get<User>(`${this.BASE_URL}/users/${id}`);
   }
 
+  getUserByEmail(email:string): Observable<User> {
+    return this.http.get<User>(this.BASE_URL.concat("/users?q=").concat(email));
+  }
+
   create(newPost: Post): Observable<Post> {
     return this.http.post<Post>(`${this.BASE_URL}/posts`, JSON.stringify(newPost), this.httpHeader)
       .pipe(
@@ -55,12 +59,24 @@ export class BlogService {
       );
   }
 
-  public signUp(user: User): Observable<User> {
+ signUp(user: User): Observable<User> {
     return this.http.post<User>(`${this.BASE_URL}/users`, JSON.stringify(user), this.httpHeader)
       .pipe(
         retry(1),
         catchError(this.httpError)
       )
+  }
+
+  login(userName) {
+    localStorage.setItem("logged", userName)
+  }
+
+  logout():void {
+    localStorage.removeItem("logged");
+  }
+
+  isLogged():boolean {
+    return localStorage.getItem("logged") != null;
   }
 
   private httpError(error) {

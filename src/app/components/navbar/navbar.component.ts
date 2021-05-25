@@ -1,3 +1,4 @@
+import { BlogService } from 'src/app/services/blog.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private service: BlogService) { }
 
   ngOnInit(): void {
+  }
+
+  userLogged():boolean {
+    return this.service.isLogged();
   }
 
 }

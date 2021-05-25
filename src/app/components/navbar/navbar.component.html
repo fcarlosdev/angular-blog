@@ -6,6 +6,6 @@
   </div>
   <ul>
     <li><a routerLink="/">Posts</a></li>
-    <li><a routerLink="add">Create a post</a></li>
+    <li *ngIf="userLogged()"><a routerLink="add">Create a post</a></li>
   </ul>
 </nav>

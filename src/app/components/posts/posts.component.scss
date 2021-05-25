@@ -52,6 +52,7 @@
           border-radius: 6px;
           margin-bottom: 0.8rem;
           cursor: pointer;
+          outline: none;
 
           &:hover {
             background-color: #323ebe;
@@ -68,6 +69,10 @@
           &:hover {
             background-color: #f2f4f4;
           }
+        }
+
+        .logout {
+          margin-top: 45px;
         }
       }
     }
