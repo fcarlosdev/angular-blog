@@ -1,3 +1,4 @@
+import { User } from './../../../models/user';
 import { BlogService } from 'src/app/services/blog.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-
   constructor(private service: BlogService) { }
 
   ngOnInit(): void {
@@ -17,5 +17,12 @@ export class NavbarComponent implements OnInit {
   userLogged():boolean {
     return this.service.isLogged();
   }
+
+  currentUserName():string {
+    console.log(localStorage.getItem("logged"))
+    return "user"
+    //return this.service.currentUser.name;
+  }
+
 
 }

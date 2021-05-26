@@ -84,14 +84,18 @@
       "comments": [],
       "likes": [
         9,
-        2
+        2,
+        3
       ],
       "userId": 1,
       "updatedAt": "1620921525370",
       "id": 8,
       "user": {
         "id": 1,
-        "name": "John Doe"
+        "name": "John Doe",
+        "email": "john@mail.com",
+        "password": "123456",
+        "profileImg": "../../../assets/images/user_prof_m.png"
       }
     }
   ],
@@ -100,31 +104,36 @@
       "id": 1,
       "name": "John Doe",
       "email": "john@mail.com",
-      "password": "123456"
+      "password": "123456",
+      "profileImg": "../../../assets/images/user_prof_m.png"
     },
     {
       "id": 2,
       "name": "Jane Doe",
       "email": "jane@mail.com",
-      "password": "123456"
+      "password": "123456",
+      "profileImg": "../../../assets/images/user_prof_f.png"
     },
     {
+      "id": 3,
       "name": "Fulano",
       "email": "fulano@mail.com",
       "password": "123456",
-      "id": 3
+      "profileImg": ""
     },
     {
+      "id": 4,
       "name": "Layenis Sobrinho",
       "email": "lay@mail.com",
       "password": "1234",
-      "id": 4
+      "profileImg": ""
     },
     {
+      "id": 5,
       "name": "Ana Paula",
       "email": "ana@mail.com",
       "password": "12345",
-      "id": 5
+      "profileImg": ""
     }
   ],
   "tags": [

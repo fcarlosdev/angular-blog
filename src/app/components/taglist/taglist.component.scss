@@ -1,33 +1,29 @@
 :host {
-  flex: 0 1 225px;
-  background-color: white;
-  position: sticky;
-  top: 433px;
+  padding-bottom: 0.8rem;
   border-radius: 6px;
-  overflow-x: auto;
 
-  .header {
+  .tags {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
 
-    h3 {
-      padding-top: .8rem;
-      padding-bottom: 0;
+    .header {
+      h3 {
+        padding-top: 0.8rem;
+        padding-bottom: 0;
+      }
+
+      padding: 0.2rem 1rem;
     }
 
-    padding: .2rem 1rem;
-  }
+    .tags-items {
+      height: 100%;
+      padding-left: 1rem;
+      overflow-y: auto;
 
-  .tags-items {
-    height: 100%;
-    padding: 0 1rem;
-    .tg-item {
-      padding: .1px;
+      .tg-item {
+        padding: 0.1rem;
+      }
     }
-
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  :host {
-      top: 438px;
   }
 }

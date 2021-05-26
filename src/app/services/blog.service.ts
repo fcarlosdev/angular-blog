@@ -15,6 +15,8 @@ export class BlogService {
 
   private BASE_URL = "http://localhost:5000";
 
+  public currentUser:User = null;
+
   constructor(private http: HttpClient) { }
 
   httpHeader = {
@@ -67,8 +69,8 @@ export class BlogService {
       )
   }
 
-  login(userName) {
-    localStorage.setItem("logged", userName)
+  login(user) {
+    localStorage.setItem("logged", user)
   }
 
   logout():void {
@@ -77,6 +79,10 @@ export class BlogService {
 
   isLogged():boolean {
     return localStorage.getItem("logged") != null;
+  }
+
+  getLoggedUsername() {
+    return localStorage.getItem("logged");
   }
 
   private httpError(error) {
@@ -91,7 +97,6 @@ export class BlogService {
     console.log(msg);
     return throwError(msg);
   }
-
 
 
 }

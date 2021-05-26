@@ -81,7 +81,7 @@ export class UserFormComponent implements OnInit {
       const {email, password} = this.userForm.controls;
       this.service.getUserByEmail(email.value).subscribe(data => {
         if (data && data[0].password == password.value) {
-          this.service.login(data[0].name)
+          this.service.login(data[0])
           this.router.navigateByUrl("/");
         } else {
           this.notifyService.showErrorMessage("Wrong user or password","Log In")

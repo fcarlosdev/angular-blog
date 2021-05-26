@@ -1,5 +1,5 @@
-<div class="side-bar">
-  <div class="about-sb">
+<div class="sidebar">
+  <div class="about-sb" *ngIf="!isLogged()">
     <div class="about-sb__nutshell">
       <span>Simple Blog</span>
       is a communit to discuss various subjects related to technology.
@@ -7,17 +7,34 @@
     <p>
       We're a place where coders share, stay up-to-date and grow their careers.
     </p>
-    <div *ngIf="!isLogged()" class="about-sb__footer">
+    <div class="about-sb__footer">
       <button routerLink="/signup">Create new account</button>
       <a routerLink="/login">Log in</a>
     </div>
-    <div *ngIf="isLogged()" class="about-sb__footer">
-      <button (click)="logout()" class="logout">Log out</button>
+  </div>
+
+  <div class="sidebar__menu">
+    <div class="menu__item"><a href="">
+      <img src="../../../assets/images/home_black_24dp.svg" alt="">
+      <span>Home</span>
+    </a></div>
+    <div class="menu__item"><a href="">
+      <img src="../../../assets/images/receipt_long_black_24dp.svg" alt="">
+      <span>Read List</span>
+    </a></div>
+    <div class="menu__item"><a href="">
+      <img src="../../../assets/images/sell_black_24dp.svg" alt="">
+      <span>Tags</span>
+    </a></div>
+    <div class="menu__item" *ngIf="isLogged()">
+      <a routerLink="" (click)="logout()">
+        <img src="../../../assets/images/logout_black_24dp.svg" alt="">
+        <span>Log out</span>
+      </a>
     </div>
   </div>
 
   <app-taglist></app-taglist>
-
 </div>
 
 <div class="posts">
