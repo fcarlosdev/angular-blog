@@ -1,6 +1,7 @@
+import { Subject } from 'rxjs';
 import { User } from './../../../models/user';
 import { BlogService } from 'src/app/services/blog.service';
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,20 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  currUser: any;
+
   constructor(private service: BlogService) { }
 
   ngOnInit(): void {
+    this.loadUser();
   }
 
-  userLogged():boolean {
+  userLogged(): boolean {
     return this.service.isLogged();
   }
 
-  currentUserName():string {
-    console.log(localStorage.getItem("logged"))
-    return "user"
-    //return this.service.currentUser.name;
+  private loadUser() {
+    if (!this.service.isLogged()) {
+      this.service.getUser$().subscribe(u => this.currUser = u);
+    } else {
+      this.currUser = this.service.getLoggedUser();
+    }
   }
-
 
 }

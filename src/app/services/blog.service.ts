@@ -1,11 +1,13 @@
+import { NotificationService } from './notification.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, Subject } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 import { User } from './../../models/user';
 import { Post } from './../../models/post';
 import { Tag } from 'src/models/tag';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -15,14 +17,20 @@ export class BlogService {
 
   private BASE_URL = "http://localhost:5000";
 
-  public currentUser:User = null;
+  private user = new Subject<User>()
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router,
+    private notifyService: NotificationService) { }
 
   httpHeader = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
+  }
+
+  getUser$():Observable<User> {
+    return this.user.asObservable();
   }
 
   getPosts(): Observable<Post[]> {
@@ -33,7 +41,7 @@ export class BlogService {
     return this.http.get<User>(`${this.BASE_URL}/users/${id}`);
   }
 
-  getUserByEmail(email:string): Observable<User> {
+  getUserByEmail(email: string): Observable<User> {
     return this.http.get<User>(this.BASE_URL.concat("/users?q=").concat(email));
   }
 
@@ -61,7 +69,7 @@ export class BlogService {
       );
   }
 
- signUp(user: User): Observable<User> {
+  signUp(user: User): Observable<User> {
     return this.http.post<User>(`${this.BASE_URL}/users`, JSON.stringify(user), this.httpHeader)
       .pipe(
         retry(1),
@@ -69,20 +77,35 @@ export class BlogService {
       )
   }
 
-  login(user) {
-    localStorage.setItem("logged", user)
+  login(email:string, password:string) {
+    this.getUserByEmail(email).subscribe(res => {
+      if (res && res[0].password == password) {
+        this.user.next(res[0])
+        this.saveUserSession(res[0])
+        this.router.navigateByUrl("/");
+      } else {
+        this.notifyService.showErrorMessage("Wrong user or password", "Log In")
+      }
+    }, (error) => {
+      this.notifyService.showErrorMessage(error.message, "Log In")
+    })
   }
 
-  logout():void {
+
+  logout(): void {
     localStorage.removeItem("logged");
   }
 
-  isLogged():boolean {
+  isLogged(): boolean {
     return localStorage.getItem("logged") != null;
   }
 
-  getLoggedUsername() {
-    return localStorage.getItem("logged");
+  getLoggedUser() {
+    return JSON.parse(localStorage.getItem("logged"));
+  }
+
+  private saveUserSession(user:any) {
+    localStorage.setItem("logged", JSON.stringify(user));
   }
 
   private httpError(error) {
@@ -94,7 +117,6 @@ export class BlogService {
       // server side error
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(msg);
     return throwError(msg);
   }
 

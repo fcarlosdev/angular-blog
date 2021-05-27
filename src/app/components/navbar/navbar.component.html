@@ -11,8 +11,8 @@
 
   <div class="user-account" *ngIf="userLogged()">
       <a href="#">
-        <img src="../../../assets/images/user_prof_m.png" alt=""/> 
-        <span>{{currentUserName()}}</span>
+        <img src="{{currUser.profileImg}}" alt=""/> 
+        <span>{{currUser.name}}</span>
     </a>
   </div>
 </nav>
